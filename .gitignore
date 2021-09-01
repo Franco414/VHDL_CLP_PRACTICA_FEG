@@ -1,0 +1,4 @@
+# Ignora todos los archivos de extension .cf
+*.cf
+# Ignora todos los archivos de extension .vcd
+*.vcd
