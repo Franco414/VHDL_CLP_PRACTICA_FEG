@@ -11,6 +11,7 @@ architecture CounterBCD1BWP_tb_arq of CounterBCD1BWP_tb is
             ena_i : in std_logic;
             rst_i : in std_logic;
             clk_i : in std_logic;
+            co_o : out std_logic;
             s_o : out std_logic_vector(3 downto 0)
         );
     end component;
@@ -18,6 +19,7 @@ architecture CounterBCD1BWP_tb_arq of CounterBCD1BWP_tb is
     signal ena_tb: std_logic := '0';
     signal rst_tb: std_logic := '0';
     signal clk_tb: std_logic := '0';
+    signal co_tb: std_logic := '0';
     signal s_tb: std_logic_vector(3 downto 0);
 
 begin 
@@ -31,11 +33,13 @@ begin
     
     ena_tb <= '1' after 100 ns,'0' after 900 ns, '1' after 1300 ns;
 
+
     DUT: CounterBCD1BWP
     port map(
         ena_i => ena_tb,
         rst_i => rst_tb,
         clk_i => clk_tb,
+        co_o => co_tb,
         s_o => s_tb
     );
 end;
