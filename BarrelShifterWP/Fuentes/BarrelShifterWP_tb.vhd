@@ -26,8 +26,8 @@ architecture BarrelShifterWP_tb_arq of BarrelShifterWP_tb is
 begin 
     --a_tb <= '0' after 150 ns,'1' after 300 ns,'0' after 500 ns;
     --a_tb <= not a_tb after 100 ns; # Example of the one clock.
-    des_tb <= "1001" after 20 ns;
-    a_tb <= "1010101010101010" after 50 ns, "1111000011110000" after 100 ns;
+    des_tb <= "0100" after 20 ns;
+    a_tb <= "1010101010101010" after 50 ns, "1111000011110000" after 100 ns,"1010101010101010" after 150 ns;
 
     DUT: BarrelShifterWP
     generic map(
