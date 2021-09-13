@@ -2,3 +2,5 @@
 *.cf
 # Ignora todos los archivos de extension .vcd
 *.vcd
+# Ignora todas las carpetas Sintesis
+Sintesis
