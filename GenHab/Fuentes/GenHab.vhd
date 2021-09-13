@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity GenHab is
-    generic(N:natural:=8);
+    generic(N:natural:=15000000);
     port(
         clk_i : in std_logic;
         rst_i : in std_logic;

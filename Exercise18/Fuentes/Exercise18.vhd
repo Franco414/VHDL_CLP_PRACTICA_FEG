@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 
 entity Exercise18 is
     generic(
-        N:integer:=4
+        N:natural:=15000000
         );
     port(
         ena_i : in std_logic;
@@ -27,7 +27,7 @@ architecture Exercise18_arq of Exercise18 is
     end component;
 
     component GenHab is
-        generic(N:natural:=8);
+        generic(N:natural:=15000000);
         port(
             clk_i : in std_logic;
             rst_i : in std_logic;

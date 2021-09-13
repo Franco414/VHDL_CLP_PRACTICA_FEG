@@ -8,7 +8,7 @@ architecture Exercise18_tb_arq of Exercise18_tb is
     -- Parte declarativa
     component Exercise18 is
         generic(
-            N:integer:=4
+            N:natural:=15000000
         );
         port(
             ena_i : in std_logic;
@@ -19,7 +19,7 @@ architecture Exercise18_tb_arq of Exercise18_tb is
         );
     end component;
 
-    signal N_tb: integer := 4;
+    signal N_tb: natural := 4;
     signal rst_tb: std_logic := '0';
     signal clk_tb: std_logic := '0';
     signal ena_tb: std_logic := '0';
@@ -28,11 +28,11 @@ architecture Exercise18_tb_arq of Exercise18_tb is
 
 begin 
 
-    clk_tb <= not clk_tb after 25 ns;
+    clk_tb <= not clk_tb after 33 ns;
     
     rst_tb <= '1' after 50 ns, '0' after 200 ns,'1' after 4200 ns, '0' after 4500 ns;
     
-    ena_tb <= '1' after 100 ns,'0' after 300 ns, '1' after 700 ns;
+    ena_tb <= '1' after 100 ns,'0' after 300 ns, '1' after 700 ns,'0' after 7000 ns,'1' after 9500 ns;
 
     uut: Exercise18
     generic map(
