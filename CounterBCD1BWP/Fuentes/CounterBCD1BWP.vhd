@@ -19,18 +19,20 @@ begin
     -- Parte descriptiva
     process(clk_i,rst_i,ena_i)
     begin
-        cond1: if ena_i='1' and rst_i ='0' then
-            cond2: if rising_edge(clk_i) then
-                    cond3: if count = 9 then    
+        cond1: if ena_i = '1' then
+            cond2: if rst_i ='0' then
+                cond3: if rising_edge(clk_i) then
+                    cond4: if count = 9 then    
                         count <= 0;
                     else
                         count <= count +1;
                     end if;
+                end if;
+            elsif rst_i = '1' then
+                count <= 0;
             end if;
-        elsif rst_i = '1' then
-            count <= 0;
-        end if;
-        cond4: if count = 9 then
+        end if;    
+        cond5: if count = 9 then
             co_o <= '1';
         elsif count=0 then
             co_o <= '0';
